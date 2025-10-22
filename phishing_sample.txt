@@ -1,0 +1,65 @@
+=== METADATA ===
+Source: Generated for training by ChatGPT (safe, non-functional example)
+Date saved: 2025-10-22
+Format: raw headers + body (headers are illustrative placeholders)
+Filename: phishing_sample.txt
+
+*** SAFETY NOTE ***
+This is a contrived, educational phishing sample. DO NOT click any links or open attachments on a real machine.
+All URLs below are intentionally non-functional examples and point to fake domains for training purposes only.
+
+=== RAW EMAIL / BODY ===
+From: "PayPal Support" <security@paypa1.com>
+To: user@example.com
+Subject: Urgent: Your PayPal account will be suspended
+Date: Thu, 20 Oct 2025 09:10:00 +0000
+Message-ID: <12345.67890@example.fake>
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Received: from unknown (HELO mail.example.fake) (192.0.2.45) by inbound.example.fake with SMTP; Thu, 20 Oct 2025 09:09:58 +0000
+Authentication-Results: mx.example.fake; spf=fail (domain of paypa1.com does not designate 192.0.2.45 as permitted sender) smtp.mailfrom=security@paypa1.com
+DKIM-Signature: (not present)
+DMARC-Result: none
+
+--- Email body below ---
+<html>
+  <body>
+    <p>Dear Customer,</p>
+
+    <p>We detected unusual activity on your PayPal account. To ensure your funds are safe, we have temporarily limited access to your account.</p>
+
+    <p><strong>Immediate action required:</strong> Verify your identity within 24 hours to restore full account access.</p>
+
+    <p>
+      Click here to verify your account:
+      <a href="http://paypal.security-update.example.fake/verify?uid=ABC123">Verify Now</a>
+    </p>
+
+    <p>If you do not verify within 24 hours, your account will be permanently limited and you may lose access to funds.</p>
+
+    <p>Regards,<br/>PayPal Security Team</p>
+  </body>
+</html>
+
+--- Visible link text vs actual href (do NOT click) ---
+Visible link text: Verify Now
+Actual href: http://paypal.security-update.example.fake/verify?uid=ABC123
+
+--- Attachments (do NOT open) ---
+invoice.docm  (macro-enabled Word document)  -- placeholder name, DO NOT open on host machine
+
+--- NOTES FOR ANALYSIS ---
+- Sender address uses a visually similar domain 'paypa1.com' (digit '1' instead of 'l') which is a common typosquat technique.
+- Headers include an SPF fail line (illustrative) indicating the sending IP is not authorized by the visible domain.
+- No DKIM signature present.
+- Link domain (paypal.security-update.example.fake) is not the legitimate paypal.com domain and mixes subdomains to appear legitimate.
+- Email uses urgency ("within 24 hours") and threat of loss of access — classic social engineering.
+- Generic greeting ("Dear Customer") rather than user name — another phishing indicator.
+
+--- SUGGESTED METADATA FOR YOUR REPORT ---
+Sample ID: sample-001
+Picked for: Contains spoofed sender, mismatched links, urgency language, and an attachment (recorded but not executed)
+How obtained: Generated for training by ChatGPT (safe example)
+Risk level (for exercise): High (multiple phishing indicators)
+
+=== END OF FILE ===
